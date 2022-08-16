@@ -30,48 +30,6 @@
     } else {
       document.documentElement.classList.remove('dark');
     }
-
-    //Toggle dark and light mode via toggle button 
-    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-    // Change the icons inside the button based on previous settings
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleLightIcon.classList.remove('hidden');
-    } else {
-      themeToggleDarkIcon.classList.remove('hidden');
-    }
-
-    var themeToggleBtn = document.getElementById('theme-toggle');
-
-    themeToggleBtn.addEventListener('click', function () {
-
-      // toggle icons inside button
-      themeToggleDarkIcon.classList.toggle('hidden');
-      themeToggleLightIcon.classList.toggle('hidden');
-
-      // if set via local storage previously
-      if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-        }
-
-        // if NOT set via local storage previously
-      } else {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-        }
-      }
-
-    });
   </script>
   <style>
     /* width */
@@ -456,12 +414,11 @@
     <!-- sections -->
 
     <!-- marquee -->
-    <section class="w-full flex justify-center items-center p-2">
-      <p class="text-md font-bold text-gray-900 dark:text-white">No Wallet KYC Required</p>
-      <p class="text-xl font-normal text-gray-900 dark:text-white ml-2">&#128522;</p>
-      <p class="text-md font-normal text-gray-900 dark:text-white ml-2">to pay using UPI on Paytm.</p>
-      <p class="ml-2"><a href="#"
-          class="inline-flex items-center text-md font-semibold tracking-tight text-gray-900 dark:text-white">
+    <section class="w-full flex flex-col justify-center items-center p-2 md:flex md:flex-row">
+      <p class="text-md font-bold text-gray-900 dark:text-white">No Wallet KYC Required &#128522;</p>
+      <p class="text-md font-normal text-gray-900 dark:text-white md:ml-2">to pay using UPI on Paytm.</p>
+      <p class="md:ml-2">
+        <a href="#" class="inline-flex items-center text-md font-semibold tracking-tight text-gray-900 dark:text-white">
           Learn more.
         </a>
       </p>
@@ -469,18 +426,18 @@
 
     <!-- Hero -->
     <section
-      class="px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start">
-      <div>
+      class="w-full px-2 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col-reverse items-center md:px-4 md:flex md:flex-row md:justify-between md:items-start xl:px-28">
+      <div class="w-full flex flex-col items-center text-center mt-12 md:block md:text-left md:mt-0">
         <img src="assets/images/Hero/1654517453942.png" alt="Paytm Logo" class="mb-12 w-20 h-20" />
-        <h5 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 class="mb-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
           India's Most-loved Payments App
         </h5>
-        <p class="mb-8 font-normal text-xl text-gray-700 dark:text-gray-400">
+        <p class="mb-8 font-normal text-lg text-gray-700 dark:text-gray-400 md:text-xl">
           Recharge & pay bills, book flights & movie tickets, open a savings
           account, invest in stocks & mutual funds, and do a lot more.
         </p>
         <a href="#"
-          class="inline-flex items-center py-3 px-8 text-lg font-medium text-center text-white bg-black rounded-full hover:bg-white hover:text-black hover:border hover:border-black focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          class="inline-flex items-center py-3 px-8 text-md font-medium text-center text-white bg-black rounded-full hover:bg-white hover:text-black hover:border hover:border-black focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:text-lg">
           Download Paytm App
           <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">
@@ -491,21 +448,22 @@
         </a>
       </div>
       <div>
-        <img src="assets/images/Hero/1656568118664.webp" alt="Mobile Image" />
+        <img src="assets/images/Hero/1656568118664.webp" class="w-screen" alt="Mobile Image" />
       </div>
     </section>
 
     <!-- section-1 - Recharge & Pay Bills on Paytm. -->
     <section
-      class="px-28 py-20 bg-[#00baf2] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start">
-      <div class="mb-6">
-        <h5 class="mb-3 text-4xl font-bold tracking-tight text-white dark:text-white">
+      class="px-2 py-20 bg-[#00baf2] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start md:px-4 xl:px-28">
+      <div class="mb-6 mx-auto lg:ml-0">
+        <h5 class="mb-3 text-3xl font-bold tracking-tight text-white dark:text-white md:text-4xl">
           Recharge & Pay Bills on Paytm.
         </h5>
       </div>
-      <div class="w-full flex justify-between">
+      <div
+        class="w-full flex flex-col items-center md:flex md:flex-row md:justify-center md:flex-wrap lg:justify-between">
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 lg:bg-[#00baf2] lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626251017535.png" alt="Recharge and Pay Bills Icon One"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex justify-start items-end">
@@ -518,7 +476,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626778824903.png" alt="Recharge and Pay Bills Icon Two"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -531,7 +489,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626251043534.png" alt="Recharge and Pay Bills Icon Three"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -544,7 +502,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626251101045.png" alt="Recharge and Pay Bills Icon Four"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -557,7 +515,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 lg:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626251127863.png" alt="Recharge and Pay Bills Icon Five"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -570,7 +528,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 lg:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1627454209116.png" alt="Recharge and Pay Bills Icon Six"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -583,7 +541,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#00baf2] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#00afe3] rounded-lg border-0 border-gray-200 hover:bg-[#00afe3] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 xl:mt-0 lg:ml-0 lg:bg-[#00baf2]">
           <img src="assets/images/Section-1/1626268580682.png" alt="Recharge and Pay Bills Icon Seven"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -599,16 +557,18 @@
     </section>
 
     <!-- section-2 - Book & Buy on Paytm. -->
+    <!-- <section
+      class="px-28 py-20 bg-[#0f4a8a] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start"> -->
     <section
-      class="px-28 py-20 bg-[#0f4a8a] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start">
-      <div class="mb-6">
-        <h5 class="mb-3 text-4xl font-bold tracking-tight text-white dark:text-white">
+      class="px-2 py-20 bg-[#0f4a8a] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start md:px-4 xl:px-28">
+      <div class="mb-6 mx-auto lg:ml-0">
+        <h5 class="mb-3 text-3xl font-bold tracking-tight text-white dark:text-white md:text-4xl">
           Book & Buy on Paytm.
         </h5>
       </div>
-      <div class="w-full flex justify-between">
+      <div class="w-full flex flex-col items-center md:flex md:flex-row md:justify-center md:flex-wrap lg:justify-between">
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 lg:bg-[#00baf2] lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626259710574.png" alt="Book & Buy on Paytm Icon One"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex justify-start items-end">
@@ -621,7 +581,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626259884425.png" alt="Book & Buy on Paytm Two" class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
             <span>Flight
@@ -633,7 +593,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626260477699.png" alt="Book & Buy on Paytm Three" class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
             <span>Bus
@@ -645,7 +605,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 md:mt-0 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626260495975.png" alt="Book & Buy on Paytm Four" class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
             <span>Train
@@ -657,7 +617,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:mt-0 md:ml-3 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626259953707.png" alt="Book & Buy on Paytm Five" class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
             <span>Car &
@@ -669,7 +629,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 lg:mt-0 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626259884425.png" alt="Book & Buy on Paytm" class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
             <span>International<br />
@@ -681,7 +641,7 @@
           </h5>
         </a>
         <a href="#"
-          class="block p-6 pr-10 bg-[#0f4a8a] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+          class="block p-6 pr-10 bg-[#0d3e80] rounded-lg border-0 border-gray-200 hover:bg-[#0d3e80] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 mt-10 md:ml-3 lg:mt-0 lg:ml-0 lg:bg-[#0f4a8a]">
           <img src="assets/images/Section-2/1626450848003.webp" alt="Book & Buy on Paytm Seven"
             class="w-16 h-16 mb-5" />
           <h5 class="mb-2 text-md font-semibold tracking-tight text-white dark:text-white flex items-end">
@@ -697,12 +657,12 @@
     </section>
 
     <!-- section-3 - Paytm Payment Instruments -->
-    <h5 class="px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-dark">Paytm Payment
+    <h5 class="hidden px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-dark">Paytm Payment
       Instruments</h5>
 
     <!-- section-3.1 - The Fastest Way to Pay In-store & Online. -->
     <section
-      class="px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
+      class="hidden px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
       <div>
         <div class="mb-12 flex items-center">
           <img src="assets/images/Section-3/Section-3.1/1617861564011.png" alt="Paytm Wallet" class="w-20 h-20" />
@@ -732,7 +692,7 @@
 
     <!-- section-3.2 - Pay anyone directly from your bank account. -->
     <section
-      class="px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
+      class="hidden px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
       <div>
         <div class="mb-12 flex items-center">
           <img src="assets/images/Section-3/Section-3.2/1615957674521.png" alt="UPI Money Transfer" class="w-20 h-20" />
@@ -763,7 +723,7 @@
 
     <!-- section-3.3 - Want it? No more waiting for it. -->
     <section
-      class="px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
+      class="hidden px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start rounded-lg mx-28 mb-8">
       <div>
         <img src="assets/images/Section-3/Section-3.3/1613622537678.webp" alt="Paytm Postpaid"
           class="w-44 h-20 mb-12" />
@@ -792,7 +752,7 @@
     </section>
 
     <!-- section-3.4 - Unlimited Cashback Everytime & Imdia's Most Sincere Credit Card -->
-    <main class="flex justify-between mx-28">
+    <main class="hidden flex justify-between mx-28">
       <section
         class="pt-8 pb-0 pr-12 pl-12 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex-col rounded-lg cursor-pointer">
         <div>
@@ -829,7 +789,7 @@
 
     <!-- section-4 - Financial Services by Paytm -->
     <section
-      class="px-28 py-36 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start mt-28">
+      class="hidden px-28 py-36 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start mt-28">
       <div>
         <h5 class="mb-10 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
           Financial Services by Paytm
@@ -860,7 +820,7 @@
 
     <!-- section-5 - Build Long-term Wealth & Achieve your Goals. -->
     <section
-      class="px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-row-reverse justify-between items-start bg-[#f5f7fa] bg-[url('assets/images/section-5/69678bc5.webp')] bg-contain bg-bottom bg-no-repeat dark:bg-none dark:bg-gray-600">
+      class="hidden px-28 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-row-reverse justify-between items-start bg-[#f5f7fa] bg-[url('assets/images/section-5/69678bc5.webp')] bg-contain bg-bottom bg-no-repeat dark:bg-none dark:bg-gray-600">
       <div>
         <img src="assets/images/Section-5/1617696247991.webp" alt="Paytm Logo" class="mb-12 w-42 h-12" />
         <h5 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -888,7 +848,7 @@
 
     <!-- section-6 - Insurance made easy. -->
     <section
-      class="px-28 py-28 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start">
+      class="hidden px-28 py-28 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-start">
       <div>
         <img src="assets/images/Section-6/1653901470333.webp" alt="Paytm Logo" class="mb-12 w-40 h-12" />
         <h5 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -916,7 +876,7 @@
 
     <!-- section-7 - Get a Personal Loan in 2 Minutes. -->
     <section
-      class="px-28 py-20 bg-[#dcdee1] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-row-reverse justify-between items-start dark:bg-gray-600">
+      class="hidden px-28 py-20 bg-[#dcdee1] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-row-reverse justify-between items-start dark:bg-gray-600">
       <div>
         <img src="assets/images/Section-7/1617695287770.png" alt="Paytm Logo" class="mb-12 w-40 h-12" />
         <h5 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -942,12 +902,13 @@
     </section>
 
     <!-- section-8 - Business Services by Paytm -->
-    <h5 class="px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Business Services by
+    <h5 class="hidden px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Business
+      Services by
       Paytm</h5>
 
     <!-- section-8.1 - The Fastest Way to Pay In-store & Online. -->
     <section
-      class="px-28 pr-0 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center rounded-lg mx-28 mb-8">
+      class="hidden px-28 pr-0 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center rounded-lg mx-28 mb-8">
       <div>
         <h5 class="mb-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           Accept payments<br /> online with ease
@@ -973,7 +934,7 @@
 
     <!-- section-8.2 - In-shop payments powered by Paytm. -->
     <section
-      class="px-28 pr-0 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center rounded-lg mx-28">
+      class="hidden px-28 pr-0 py-20 bg-white border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center rounded-lg mx-28">
       <div>
         <h5 class="mb-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
           In-shop payments<br /> powered by Paytm.
@@ -999,12 +960,13 @@
     </section>
 
     <!-- section-9 - Business Tools to help your business grow -->
-    <h5 class="px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Business Tools to
+    <h5 class="hidden px-28 mb-8 mt-28 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Business Tools
+      to
       help<br />
       your business grow
     </h5>
 
-    <section class="px-28 py-20 pt-0 pb-20 w-full flex justify-between dark:bg-gray-600 dark:border-gray-700">
+    <section class="hidden px-28 py-20 pt-0 pb-20 w-full flex justify-between dark:bg-gray-600 dark:border-gray-700">
       <section class="bg-[#f6f6f6] rounded-lg dark:bg-gray-600 dark:border-gray-700">
         <img class="p-8 rounded-t-lg" src="assets/images/Section-9/1626081565192.webp" alt="product image" />
         <div class="px-5 pb-5">
@@ -1109,7 +1071,7 @@
 
     <!-- section-10 - Paytm Money & Paytm Travel -->
     <section
-      class="px-28 py-20 bg-[#F0FBFF] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start">
+      class="hidden px-28 py-20 bg-[#F0FBFF] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-start items-start">
       <!-- section-10.1 - Paytm Money -->
       <div class="flex justify-between rounded-xl p-6 mb-8 bg-white dark:bg-gray-600 dark:border-gray-700">
         <div class="bg-white rounded-lg dark:bg-gray-600 dark:border-gray-700 w-1/4">
@@ -1247,7 +1209,7 @@
 
     <!-- section-11 - Download Paytm App to Pay from anywhere -->
     <section
-      class="block p-6 mt-16 bg-[#f6f6f6] border-0 border-gray-200 dark:bg-gray-600 dark:border-gray-700 flex justify-between items-center px-28">
+      class="hidden block p-6 mt-16 bg-[#f6f6f6] border-0 border-gray-200 dark:bg-gray-600 dark:border-gray-700 flex justify-between items-center px-28">
       <div class="flex items-center">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Download Paytm App<br /> to Pay
           from anywhere</h5>
@@ -1263,15 +1225,58 @@
 
     <!-- section-12 - Bottom borders -->
     <section
-      class="block h-3 mt-16 bg-[#00baf2] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center px-28">
+      class="hidden block h-3 mt-16 bg-[#00baf2] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center px-28">
     </section>
     <section
-      class="block h-3 bg-[#002970] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center px-28">
+      class="hidden block h-3 bg-[#002970] border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 flex justify-between items-center px-28">
     </section>
 
   </div>
   <!-- flowbite js -->
   <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+  <script>
+    //Toggle dark and light mode via toggle button 
+    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Change the icons inside the button based on previous settings
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    var themeToggleBtn = document.getElementById('theme-toggle');
+
+    themeToggleBtn.addEventListener('click', function () {
+
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // if set via local storage previously
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+
+        // if NOT set via local storage previously
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+
+    });
+  </script>
 </body>
 
 </html>
