@@ -10,6 +10,7 @@
   <script>
     // tailwing css config
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -422,6 +423,25 @@
           Learn more.
         </a>
       </p>
+    </section>
+
+    <!-- theme switcher button -->
+    <section class="fixed right-0 top-[5.3rem] bg-gray-600 px-2 rounded-l-3xl shadow-md dark:bg-white md:top-[4rem] lg:top-[4.5rem] xl:top-[5.3rem]">
+      <button id="theme-toggle" type="button"
+        class="text-gray-400 dark:text-gray-400 rounded-lg text-sm p-2.5">
+      <!-- <button id="theme-toggle" type="button"
+        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"> -->
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
     </section>
 
     <!-- Hero -->
@@ -1113,7 +1133,8 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col flex-wrap justify-start items-center md:flex md:flex-row md:items-start lg:flex lg:flex-row lg:w-full lg:justify-between">
+        <div
+          class="flex flex-col flex-wrap justify-start items-center md:flex md:flex-row md:items-start lg:flex lg:flex-row lg:w-full lg:justify-between">
           <a href="#"
             class="block p-4 pt-2 pr-2 pl-2 bg-[#66d6ff] rounded-xl border-0 border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
             <img class="rounded-t-lg w-36 h-44 transition delay-150 duration-300 hover:scale-105"
@@ -1162,13 +1183,16 @@
       </div>
 
       <!-- section-10.2 - Paytm Travel -->
-      <div class="flex flex-col rounded-xl p-6 mb-8 bg-white dark:bg-gray-600 dark:border-gray-700 lg:flex lg:flex-row lg:justify-between">
-        <div class="bg-white rounded-lg dark:bg-gray-600 dark:border-gray-700 w-full flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/4">
+      <div
+        class="flex flex-col rounded-xl p-6 mb-8 bg-white dark:bg-gray-600 dark:border-gray-700 lg:flex lg:flex-row lg:justify-between">
+        <div
+          class="bg-white rounded-lg dark:bg-gray-600 dark:border-gray-700 w-full flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/4">
           <img class="p-5 rounded-t-lg w-48" src="assets/images/Section-10/Section-10.2/1626419838546.webp"
             alt="product image" />
           <div class="px-5 pb-5">
             <div class="mt-2.5 mb-2">
-              <p class="text-lg font-normal tracking-tight text-gray-900 dark:text-white md:text-xl">Best travel solutions with
+              <p class="text-lg font-normal tracking-tight text-gray-900 dark:text-white md:text-xl">Best travel
+                solutions with
                 quick ticket bookings, great offers and easy refunds</p>
             </div>
             <div>
@@ -1179,7 +1203,8 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col flex-wrap justify-start items-center md:flex md:flex-row md:items-start lg:flex lg:flex-row lg:w-full lg:justify-between">
+        <div
+          class="flex flex-col flex-wrap justify-start items-center md:flex md:flex-row md:items-start lg:flex lg:flex-row lg:w-full lg:justify-between">
           <a href="#"
             class="block p-4 pt-8 pr-2 pl-4 bg-[#66d6ff] rounded-xl border-0 border-gray-200 hover:bg-[#40c2ed] dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 ml-5">
             <img class="rounded-t-lg w-16 h-16 mb-4" src="assets/images/Section-10/Section-10.2/1627552693557.webp"
@@ -1234,7 +1259,8 @@
     <section
       class="block p-6 mt-16 bg-[#f6f6f6] border-0 border-gray-200 dark:bg-gray-600 dark:border-gray-700 flex flex-col items-center px-2 md:px-4 lg:flex lg:flex-row lg:justify-between lg:items-center xl:px-28">
       <div class="flex flex-col items-center lg:flex lg:flex-row items-center">
-        <h5 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white lg:mb-2">Download Paytm App<br /> to Pay
+        <h5 class="mb-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white lg:mb-2">Download Paytm
+          App<br /> to Pay
           from anywhere</h5>
         <img class="cursor-pointer mt-5 lg:ml-5 lg:mt-0" src="assets/images/Section-11/71229188.svg" alt="1" />
         <img class="cursor-pointer mt-5 lg:ml-5 lg:mt-0" src="assets/images/Section-11/33d9d7f1.svg" alt="2" />
@@ -1261,7 +1287,6 @@
     //Toggle dark and light mode via toggle button
     var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
     // Change the icons inside the button based on previous settings
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       themeToggleLightIcon.classList.remove('hidden');
