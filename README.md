@@ -16,6 +16,8 @@ Hi, I'm `Vikas Rohra`, a web developer living in Mumbai, India.
 
 <br /> 
 
+## Preview
+
 ![Paytm Clone Image](./assets/images/app-ss.png "Title")
 
 ## Live link
