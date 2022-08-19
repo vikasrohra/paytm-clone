@@ -1,6 +1,6 @@
-# Web Design Landing Page
+# Paytm Clone
 
-## Who am I
+## Who am I?
 Hi, I'm `Vikas Rohra`, a web developer living in Mumbai, India.
 
 br 
