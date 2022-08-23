@@ -12,7 +12,9 @@ Hi, I'm `Vikas Rohra`, a web developer living in Mumbai, India.
 <br /> 
 
 ## Below are the take aways from this project
- - How to integrate Tailwind CSS and use it's components evening without Node js installed.
+ - Usage of Tailwind CSS to build beautiful looking websites
+ - Create responsive websites using Tailwind CSS
+ - To unable and disable Dark and Light mode  
 
 <br /> 
 
